@@ -1,10 +1,10 @@
-package dogsmanager.service;
+package net.proselyte.dogsmanager.service;
 
-import dogsmanager.dao.DogDao;
-import dogsmanager.model.Dog;
+import net.proselyte.dogsmanager.dao.DogDao;
+import net.proselyte.dogsmanager.model.Dog;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service

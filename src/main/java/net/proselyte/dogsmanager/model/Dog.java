@@ -1,4 +1,6 @@
-package dogsmanager.model;
+package net.proselyte.dogsmanager.model;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -10,22 +12,15 @@ import java.util.Date;
 @Table(name = "DOGS")
 public class Dog {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull
     @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NotNull
-    @Size(min = 1, max = 100)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Size(min = 3, max = 100)
     @Column(name = "DOG_NAME", length = 100)
     private String dogName;
-
-    @NotNull
-    @Past(message = "Date of birth should be set in past")
-    @Basic
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "DOG_BIRTH")
-    private Date dogBirth;
 
     @NotNull
     @Column(name = "DOG_HEIGHT")
@@ -34,6 +29,13 @@ public class Dog {
     @NotNull
     @Column(name = "DOG_WEIGHT")
     private float dogWeight;
+
+    @NotNull
+    @Past(message = "Date of birth should be set in past")
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @Column(name = "DOG_BIRTH")
+    private Date dogBirth;
 
     public int getId() {
         return id;
@@ -51,14 +53,6 @@ public class Dog {
         this.dogName = dogName;
     }
 
-    public Date getDogBirth() {
-        return dogBirth;
-    }
-
-    public void setDogBirth(Date dogBirth) {
-        this.dogBirth = dogBirth;
-    }
-
     public float getDogHeight() {
         return dogHeight;
     }
@@ -73,6 +67,14 @@ public class Dog {
 
     public void setDogWeight(float dogWeight) {
         this.dogWeight = dogWeight;
+    }
+
+    public Date getDogBirth() {
+        return dogBirth;
+    }
+
+    public void setDogBirth(Date dogBirth) {
+        this.dogBirth = dogBirth;
     }
 
     @Override
