@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="Grid_pr:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="WebApp-1.1.war">
-      <element id="artifact" artifact-name="Grid_pr:war exploded" />
-    </root>
-  </artifact>
-</component>
