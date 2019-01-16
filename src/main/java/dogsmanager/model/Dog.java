@@ -1,4 +1,4 @@
-package net.proselyte.dogsmanager.model;
+package dogsmanager.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

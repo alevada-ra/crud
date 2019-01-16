@@ -12,7 +12,7 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-       <context:component-scan base-package="net.proselyte.dogsmanager"/>
+       <context:component-scan base-package="dogsmanager"/>
 
        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
               <property name="prefix" value="/WEB-INF/pages/"/>
@@ -33,7 +33,7 @@
               <property name="dataSource" ref="dataSource"/>
               <property name="annotatedClasses">
                      <list>
-                            <value>net.proselyte.dogsmanager.model.Dog</value>
+                            <value>dogsmanager.model.Dog</value>
                      </list>
               </property>
               <property name="hibernateProperties">
@@ -46,15 +46,15 @@
        </bean>
 
        <!--DogDao and DogService beans-->
-       <bean id="dogDao" class="net.proselyte.dogsmanager.dao.DogDaoImplementation">
+       <bean id="dogDao" class="dogsmanager.dao.DogDaoImplementation">
               <property name="sessionFactory" ref="sessionFactoryBean"/>
        </bean>
 
-       <bean id="dogService" class="net.proselyte.dogsmanager.service.DogServiceImplemantation">
+       <bean id="dogService" class="dogsmanager.service.DogServiceImplemantation">
               <property name="dogDao" ref="dogDao"/>
        </bean>
 
-       <context:component-scan base-package="net.proselyte.dogsmanager"/>
+       <context:component-scan base-package="dogsmanager"/>
 
        <tx:annotation-driven transaction-manager="transactionManager"/>
 

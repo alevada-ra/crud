@@ -1,6 +1,6 @@
-package net.proselyte.dogsmanager.dao;
+package dogsmanager.dao;
 
-import net.proselyte.dogsmanager.model.Dog;
+import dogsmanager.model.Dog;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -21,16 +21,16 @@ public class DogDaoImplementation implements DogDao {
 
     @Override
     public void addDog(Dog dog) {
-        Session session = this.sessionFactory.getCurrentSession();
-        session.persist(dog);
+        Session currentSession = this.sessionFactory.getCurrentSession();
+        currentSession.persist(dog);
 
         logger.info("Dog was sucesfully added");
     }
 
     @Override
     public void updateDog(Dog dog) {
-        Session session = this.sessionFactory.getCurrentSession();
-        session.update(dog);
+        Session currentSession = this.sessionFactory.getCurrentSession();
+        currentSession.update(dog);
 
         logger.info("Dog was sucesfully updated");
     }
@@ -38,34 +38,32 @@ public class DogDaoImplementation implements DogDao {
     @Override
     public void removeDogById(int id) {
         Dog dog = new Dog();
-        Session session = this.sessionFactory.getCurrentSession();
+        Session currentSession = this.sessionFactory.getCurrentSession();
         dog.setId(id);
 
         if(dog != null) {
-            session.delete(dog);
+            currentSession.delete(dog);
             logger.info("Dog was sucesfully removed");
         }
     }
 
-    @Override
+//    @Override
     public Dog getDogById(int id) {
-        Session session = this.sessionFactory.getCurrentSession();
-        Dog dog = session.load(Dog.class, new Integer(id));
+        Session currentSession = this.sessionFactory.getCurrentSession();
+        Dog dog = currentSession.load(Dog.class, new Integer(id));
         logger.info("Dog was sucesfully loaded: " + dog);
-
         return dog;
     }
 
-    @Override
+//    @Override
     @SuppressWarnings("unchecked")
     public List<Dog> listDogs() {
-        Session session = this.sessionFactory.getCurrentSession();
-        List<Dog> dogsList = session.createQuery("from Dog").list();
+        Session currentSession = this.sessionFactory.getCurrentSession();
+        List<Dog> dogsList = currentSession.createQuery("from Dog").list();
 
         for(Dog dog : dogsList) {
             logger.info("Dogs list: " + dog);
         }
-
         return dogsList;
     }
 }

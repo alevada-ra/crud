@@ -1,6 +1,6 @@
-package net.proselyte.dogsmanager.service;
+package dogsmanager.service;
 
-import net.proselyte.dogsmanager.model.Dog;
+import dogsmanager.model.Dog;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package net.proselyte.dogsmanager.dao;
+package dogsmanager.dao;
 
-import net.proselyte.dogsmanager.model.Dog;
+import dogsmanager.model.Dog;
 
 import java.util.List;
 
