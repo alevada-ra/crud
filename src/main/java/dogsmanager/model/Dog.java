@@ -3,6 +3,7 @@ package dogsmanager.model;
 import lombok.EqualsAndHashCode;
 import org.springframework.format.annotation.DateTimeFormat;
 
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -14,7 +15,7 @@ import java.util.Date;
 @EqualsAndHashCode
 public class Dog {
     @Id
-    @NotNull
+    @javax.validation.constraints.NotNull
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
