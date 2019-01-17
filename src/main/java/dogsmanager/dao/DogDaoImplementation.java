@@ -49,7 +49,9 @@ public class DogDaoImplementation implements DogDao {
     public Dog getDogById(int id) {
         Session currentSession = this.sessionFactory.getCurrentSession();
         Dog dog = currentSession.load(Dog.class, new Integer(id));
+
         logger.info("Dog was sucesfully loaded: " + dog);
+
         return dog;
     }
 
@@ -62,6 +64,7 @@ public class DogDaoImplementation implements DogDao {
         for(Dog dog : dogsList) {
             logger.info("Dogs list: " + dog);
         }
+        
         return dogsList;
     }
 }
