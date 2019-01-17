@@ -1,0 +1,22 @@
+# Build output
+
+target/*
+test-output/*
+**/.idea/
+**/.classpath
+**/.metadata/
+**/.settings/
+**/*.jar
+**/*.xls
+velocity.log
+.idea/
+
+# Mac OS Finder's folder settings
+.DS_Store
+/target/
+
+# .gitignore and app.properties file
+.gitignore
+src/test/resources/app.properties
+
+src/test/resources/app_local\.properties
