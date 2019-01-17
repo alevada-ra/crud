@@ -2,6 +2,7 @@ package dogsmanager.service;
 
 import dogsmanager.dao.DogDao;
 import dogsmanager.model.Dog;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -9,6 +10,7 @@ import java.util.List;
 
 @Service
 public class DogServiceImplemantation implements DogService {
+    @Autowired
     private DogDao dogDao;
 
     public void setDogDao(DogDao dogDao) {

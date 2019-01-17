@@ -1,5 +1,6 @@
 package dogsmanager.model;
 
+import lombok.EqualsAndHashCode;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "DOGS")
+@EqualsAndHashCode
 public class Dog {
     @Id
     @NotNull

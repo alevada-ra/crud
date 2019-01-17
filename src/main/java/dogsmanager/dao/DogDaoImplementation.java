@@ -41,13 +41,11 @@ public class DogDaoImplementation implements DogDao {
         Session currentSession = this.sessionFactory.getCurrentSession();
         dog.setId(id);
 
-        if(dog != null) {
-            currentSession.delete(dog);
-            logger.info("Dog was sucesfully removed");
-        }
+        currentSession.delete(dog);
+        logger.info("Dog was sucesfully removed");
     }
 
-//    @Override
+    @Override
     public Dog getDogById(int id) {
         Session currentSession = this.sessionFactory.getCurrentSession();
         Dog dog = currentSession.load(Dog.class, new Integer(id));
@@ -55,7 +53,7 @@ public class DogDaoImplementation implements DogDao {
         return dog;
     }
 
-//    @Override
+    @Override
     @SuppressWarnings("unchecked")
     public List<Dog> listDogs() {
         Session currentSession = this.sessionFactory.getCurrentSession();

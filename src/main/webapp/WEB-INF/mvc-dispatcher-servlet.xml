@@ -50,9 +50,9 @@
               <property name="sessionFactory" ref="sessionFactoryBean"/>
        </bean>
 
-       <bean id="dogService" class="dogsmanager.service.DogServiceImplemantation">
-              <property name="dogDao" ref="dogDao"/>
-       </bean>
+       <!--<bean id="dogService" class="dogsmanager.service.DogServiceImplemantation">-->
+              <!--<property name="dogDao" ref="dogDao"/>-->
+       <!--</bean>-->
 
        <context:component-scan base-package="dogsmanager"/>
 
