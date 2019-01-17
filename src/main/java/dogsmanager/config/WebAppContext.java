@@ -14,14 +14,10 @@ import org.springframework.web.servlet.view.JstlView;
 
 import java.util.Properties;
 
-/**
- * @author Petri Kainulainen
- */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {
-        "dogsmanager.controller"
-})
+@ComponentScan(basePackages = {"dogsmanager.controller"})
+
 public class WebAppContext extends WebMvcConfigurerAdapter {
 
     private static final String VIEW_RESOLVER_PREFIX = "/WEB-INF/jsp/";
@@ -42,17 +38,13 @@ public class WebAppContext extends WebMvcConfigurerAdapter {
         SimpleMappingExceptionResolver exceptionResolver = new SimpleMappingExceptionResolver();
 
         Properties exceptionMappings = new Properties();
-
         exceptionMappings.put("java.lang.Exception", "error/error");
         exceptionMappings.put("java.lang.RuntimeException", "error/error");
-
         exceptionResolver.setExceptionMappings(exceptionMappings);
 
         Properties statusCodes = new Properties();
-
         statusCodes.put("error/404", "404");
         statusCodes.put("error/error", "500");
-
         exceptionResolver.setStatusCodes(statusCodes);
 
         return exceptionResolver;

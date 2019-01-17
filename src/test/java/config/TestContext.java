@@ -8,9 +8,6 @@ import org.mockito.Mockito;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * @author Petri Kainulainen
- */
 @Configuration
 public class TestContext {
 

@@ -71,7 +71,6 @@ public class DogControllerTest {
     private int updateTimes;
     private List<Dog> dogList;
 
-
     public DogControllerTest(int id, int addTimes, int updateTimes) {
         this.id = id;
         this.addTimes = addTimes;
