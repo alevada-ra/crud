@@ -19,7 +19,6 @@
               <property name="suffix" value=".jsp"/>
        </bean>
 
-       <!-- Database Information -->
        <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
               <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
               <property name="url" value="jdbc:mysql://localhost:3306/DOGSMANAGER"/>
@@ -27,7 +26,6 @@
            <property name="password" value="1Tolik_1986"/>
        </bean>
 
-       <!-- Hibernate 5 SessionFactory -->
        <bean id="sessionFactoryBean"
              class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
               <property name="dataSource" ref="dataSource"/>
@@ -50,9 +48,9 @@
               <property name="sessionFactory" ref="sessionFactoryBean"/>
        </bean>
 
-       <!--<bean id="dogService" class="dogsmanager.service.DogServiceImplemantation">-->
-              <!--<property name="dogDao" ref="dogDao"/>-->
-       <!--</bean>-->
+       <bean id="dogService" class="dogsmanager.service.DogServiceImplemantation">
+              <property name="dogDao" ref="dogDao"/>
+       </bean>
 
        <context:component-scan base-package="dogsmanager"/>
 

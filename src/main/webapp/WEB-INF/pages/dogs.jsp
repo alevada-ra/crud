@@ -63,13 +63,13 @@
 <c:if test="${!empty listDogs}">
   <table class="tg">
     <tr>
-      <th width="80">ID</th>
-      <th width="120">Name</th>
-      <th width="120">Weight</th>
-      <th width="120">Height</th>
-      <th width="120">Date of Birth</th>
-      <th width="60">Edit</th>
-      <th width="60">Delete</th>
+      <th width="20">ID</th>
+      <th width="80">Name</th>
+      <th width="40">Weight</th>
+      <th width="40">Height</th>
+      <th width="160">Date of Birth</th>
+      <th width="40">Edit</th>
+      <th width="40">Delete</th>
     </tr>
     <c:forEach items="${listDogs}" var="dog">
       <tr>
